@@ -32,13 +32,13 @@ class CollectionsBenchmark {
   @Benchmark
   def existsEmptinessBefore(): Int = testArrays.count(_.exists(_ => true))
 
+/*
   @Benchmark
   def existsToContainsArrayAfter(): Seq[Boolean] = testArrays.map { testArray => testArray.contains(testArray.last) }
 
   @Benchmark
   def existsToContainsSeqAfter(): Seq[Boolean] = testSeqs.map { testSeq => testSeq.contains(testSeq.last) }
 
-/*
   @Benchmark
   def existsToContainsSeqBefore(): Seq[Boolean] = testSeqs.map { testSeq => val key = testSeq.last; testSeq.exists(_ == key) }
 
