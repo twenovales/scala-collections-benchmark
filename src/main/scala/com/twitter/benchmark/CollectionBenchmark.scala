@@ -36,8 +36,9 @@ class CollectionsBenchmark {
   def existsToContainsArrayAfter(): Seq[Boolean] = testArrays.map { testArray => testArray.contains(testArray.last) }
 
   @Benchmark
-  def existsToContainsSeqAfter(): Seq[Boolean] = testSeqs.amp { testSeq => testSeq.contains(testSeq.last) }
+  def existsToContainsSeqAfter(): Seq[Boolean] = testSeqs.map { testSeq => testSeq.contains(testSeq.last) }
 
+/*
   @Benchmark
   def existsToContainsSeqBefore(): Seq[Boolean] = testSeqs.map { testSeq => val key = testSeq.last; testSeq.exists(_ == key) }
 
@@ -88,4 +89,5 @@ class CollectionsBenchmark {
 
   @Benchmark
   def seqLengthSeqAfter(): Int = testSeqs.count(_.nonEmpty)
+*/
 }
